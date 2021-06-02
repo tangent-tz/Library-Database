@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="row">
+            <div class="col-8">
+                <h3>{{ item['title'] }}</h3>
+                <p>Item details:</p>
+                {% for i in item %}
+                    <div>{{ i }}: {% if i == 'price' %}${% endif %}{{item[i]}}</div>
+                {% endfor %}
+                <p></p>
+                {% for item in details %}
+                    <h5>{{ item|title }}s</h5>
+                    {% for col in details[item] %}
+                        {% for k, v in col.items() %}
+                            <div>{{ v }}</div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <img class="ml-auto col-4" src="{{ item['picture'] }}">
+        </div>
+    </div>  
+</article>
+{% endblock body %}

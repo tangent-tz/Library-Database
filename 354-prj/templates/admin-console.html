@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Admin Console</h1>
+<p>Current items in database: {{ count }}</p>
+<p>Current members in database: {{ members }}</p>
+<a href="admin_delete">Delete User</a>
+<p></p>
+<a href="admin_update">Update user password</a>
+{% endblock %}

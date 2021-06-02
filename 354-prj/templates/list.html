@@ -1,0 +1,19 @@
+{% for item in results %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="row" style="max-height: 200px">
+            <div class="col-8">
+                <h3>{{ item['title'] }}</h3>
+                {% for i in item %}
+                    {% if item[i] != None %}
+                        {% if i != 'title' and i != 'picture' %}
+                            <div>{{ i }}: {% if i == 'price' %}${% endif %}{{item[i]}}</div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <img class="ml-auto" src="{{ item['picture'] }}" style="max-height: 200px; height: auto;">
+        </div>
+    </div>  
+</article>
+{% endfor %}

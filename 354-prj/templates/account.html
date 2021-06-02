@@ -1,0 +1,13 @@
+{%  extends 'layout.html' %}
+{%  block body %}
+    {% if session.loggedin %}
+        <h1>Welcome</h1>
+        <h2>{{ session.name }}</h2>
+        {% set results = books %}
+        {% include "list.html" %}
+        {% set results = cds %}
+        {% include "list.html" %}
+        {% set results = dvds %}
+        {% include "list.html" %}
+    {% endif %}
+{% endblock %}

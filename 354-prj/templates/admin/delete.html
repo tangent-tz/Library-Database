@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="" method="POST">
+    <div class="form-group">
+        <label>Delete User ID</label>
+        <input type="text" name="user" class="form-control" value={{ request.form.user }}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
